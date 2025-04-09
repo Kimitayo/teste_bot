@@ -1,19 +1,15 @@
 {
-  "name": "monitor-cashback",
+  "name": "giftcard-cashback-monitor",
   "version": "1.0.0",
-  "description": "Monitor de cashback do Banco Inter com Puppeteer",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "puppeteer": "^21.3.8",
+    "cheerio": "^1.0.0-rc.12",
     "express": "^4.18.2",
     "node-telegram-bot-api": "^0.61.0",
-    "cheerio": "^1.0.0-rc.12"
-  },
-  "engines": {
-    "node": ">=18.x"
-  },
-  "type": "module"
+    "puppeteer": "^22.7.0"
+  }
 }
