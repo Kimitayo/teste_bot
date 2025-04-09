@@ -7,8 +7,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Substitua com seus valores reais
-const TELEGRAM_TOKEN = 'SEU_TOKEN';
-const TELEGRAM_CHAT_ID = 'SEU_CHAT_ID';
+const TELEGRAM_TOKEN = '8158695370:AAGorpT7ifG4NmLqKbuCo3ZbI9Dt1xQg0bE';
+const TELEGRAM_CHAT_ID = '-4605247252';
 const URL = 'https://www.bancointer.com.br/cashback/';
 
 const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: false });
