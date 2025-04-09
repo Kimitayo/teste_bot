@@ -15,6 +15,9 @@ const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: false });
 
 let ultimoCashback = {};
 
+// Gift cards que queremos monitorar
+const giftCardsMonitorados = ['Gift Card Uber', 'Gift Card Xbox', 'Gift Card Zift - Cartão Multimarcas'];
+
 async function buscarCashbacks() {
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -32,7 +35,10 @@ async function buscarCashbacks() {
   $('div[data-testid="gift-card"]').each((_, el) => {
     const nome = $(el).find('span.GiftCardstyles__GiftCardName-sc-l5wiub-4').text().trim();
     const valor = $(el).find('span.GiftCardstyles__CashbackValue-sc-l5wiub-5').text().trim() || 'Sem cashback';
-    if (nome) produtos.push({ nome, valor });
+    
+    if (giftCardsMonitorados.includes(nome)) {
+      produtos.push({ nome, valor });
+    }
   });
 
   await browser.close();
